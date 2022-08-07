@@ -1,24 +1,17 @@
 {
   "name": "react-boilerplate",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack serve --config config/webpack.dev.ts",
-    "build": "webpack --config config/webpack.prod.ts"
-  },
-  "keywords": [
-    "react",
-    "react-boilerplate",
-    "webpack",
-    "typescript",
-    "react-typescript",
-    "Material UI",
-    "Mui",
-    "React Router Dom"
-  ],
   "author": "Tomás Catena",
   "license": "MIT",
+  "version": "0.0.1",
+  "description": "React/Typescript Boilerplate",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "webpack serve --config config/webpack.dev.ts",
+    "build": "webpack --config config/webpack.prod.ts",
+    "lint": "eslint src/**/*.ts src/**/*.tsx",
+    "lint:fix": "eslint src/**/*.ts src/**/*.tsx --fix",
+    "lint:quiet": "eslint src/**/*.ts src/**/*.tsx --quiet"
+  },
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
@@ -56,5 +49,16 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3",
     "webpack-merge": "^5.8.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "react-boilerplate",
+    "webpack",
+    "typescript",
+    "react-typescript",
+    "material ui",
+    "mui",
+    "react router dom",
+    "eslint"
+  ]
 }

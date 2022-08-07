@@ -3,6 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import React from 'react';
 import darkTheme from './themes/darkTheme';
+import lightTheme from './themes/lightTheme';
 
 const App = () => {
   return (
