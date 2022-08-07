@@ -1,8 +1,8 @@
-import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import React from 'react';
 import darkTheme from './themes/darkTheme';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -15,8 +15,14 @@ const App = () => {
         </div>
 
         <Routes>
-          <Route path="/" element={<h1>Home</h1>} />
-          <Route path="/about" element={<h1>About</h1>} />
+          <Route
+            path="/"
+            element={<h1>Home</h1>}
+          />
+          <Route
+            path="/about"
+            element={<h1>About</h1>}
+          />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

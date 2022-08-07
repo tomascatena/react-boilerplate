@@ -1,5 +1,5 @@
-import { Configuration } from 'webpack';
 import 'webpack-dev-server';
+import { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import commonConfig from './webpack.common';
