@@ -20,6 +20,8 @@
   ],
   "settings": { "react": { "version": "detect" } },
   "globals": { "React": true, "JSX": true },
+  // Lint ".storybook" folder (don't ignore it)
+  "ignorePatterns": ["!.storybook"],
   "rules": {
     "no-unused-vars": "warn",
     "@typescript-eslint/no-unused-vars": ["warn"],

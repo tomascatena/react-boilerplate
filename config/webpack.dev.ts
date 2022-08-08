@@ -22,7 +22,9 @@ const devConfig: Configuration = {
     assetModuleFilename: 'assets/[hash][ext]',
     clean: true,
   },
-  plugins: [new ReactRefreshPlugin()],
+  plugins: [
+    new ReactRefreshPlugin(),
+  ],
 };
 
 export default merge(commonConfig, devConfig);

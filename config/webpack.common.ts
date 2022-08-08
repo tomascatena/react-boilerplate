@@ -46,7 +46,15 @@ const commonConfig: Configuration = {
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    plugins: [new TsconfigPathsPlugin({})],
+    plugins: [
+      new TsconfigPathsPlugin({}),
+    ],
+  },
+  optimization: {
+    usedExports: true,
+    minimize: true,
+    mergeDuplicateChunks: true,
+    removeEmptyChunks: true,
   },
 };
 
