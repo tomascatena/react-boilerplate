@@ -5,7 +5,9 @@ import { useDarkMode } from './hooks/useDarkMode';
 import AboutPage from './pages/AboutPage/AboutPage';
 import CssBaseline from '@mui/material/CssBaseline';
 import HomePage from './pages/HomePage/HomePage';
+import LoginPage from './pages/LoginPage/LoginPage';
 import React from 'react';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 import ResponsiveAppBar from '@/components/AppBar/AppBar';
 
 const App = () => {
@@ -30,6 +32,14 @@ const App = () => {
             <Route
               path="/about"
               element={<AboutPage />}
+            />
+            <Route
+              path="/login"
+              element={<LoginPage />}
+            />
+            <Route
+              path="/register"
+              element={<RegisterPage />}
             />
           </Routes>
         </Container>
