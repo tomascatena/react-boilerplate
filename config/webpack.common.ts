@@ -24,6 +24,7 @@ const commonConfig: Configuration = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+        exclude: /node_modules/,
       },
       {
         test: /.s[ac]ss$/,
@@ -32,10 +33,12 @@ const commonConfig: Configuration = {
           { loader: 'css-loader', options: { modules: true } },
           { loader: 'sass-loader' },
         ],
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        exclude: /node_modules/,
       },
     ],
   },
@@ -49,12 +52,6 @@ const commonConfig: Configuration = {
     plugins: [
       new TsconfigPathsPlugin({}),
     ],
-  },
-  optimization: {
-    usedExports: true,
-    minimize: true,
-    mergeDuplicateChunks: true,
-    removeEmptyChunks: true,
   },
 };
 

@@ -13,13 +13,17 @@ import React from 'react';
 
 type Props = {
   /**
+   * Name attribute of the input
+   */
+  name: string;
+  /**
    * The label for the input
    */
   label: string;
   /**
    * The help text for the input
    */
-  helpText: string;
+  helpText?: string;
   /**
    * The type of the input (text, password or email)
    */
@@ -35,7 +39,7 @@ type Props = {
   /**
    * The placeholder for the input
    */
-  placeholder: string;
+  placeholder?: string;
   /**
    * The styles for the input
    */
@@ -63,7 +67,7 @@ type Props = {
   /**
    * The onBlur handler for the input
    */
-  onBlur?: () => void;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   /**
    * The onChange handler for the input
    */
@@ -74,6 +78,7 @@ type Props = {
  * Primary UI component for user interaction
  */
 const CustomInput = ({
+  name,
   label,
   helpText,
   type,
@@ -97,6 +102,9 @@ const CustomInput = ({
 
   const hasError = !!(error && touched);
 
+  /**
+   * Check Icon to be shown at the right of the input.
+   */
   const endAdornment = (
     <EndAdornment
       shouldShowCheckIcon={shouldShowCheckIcon}
@@ -117,10 +125,11 @@ const CustomInput = ({
         <InputLabel>{label}</InputLabel>
 
         <Input
+          name={name}
           type={inputType}
           placeholder={placeholder}
           value={value}
-          endAdornment={endAdornment}
+          endAdornment={touched && endAdornment}
           required={!!required}
           disabled={!!disabled}
           onChange={onChange}
@@ -139,11 +148,12 @@ const CustomInput = ({
         <InputLabel>{label}</InputLabel>
 
         <OutlinedInput
+          name={name}
           type={inputType}
           placeholder={placeholder}
           value={value}
           label={label}
-          endAdornment={endAdornment}
+          endAdornment={touched && endAdornment}
           required={!!required}
           disabled={!!disabled}
           onChange={onChange}
@@ -163,10 +173,11 @@ const CustomInput = ({
         <InputLabel>{label}</InputLabel>
 
         <FilledInput
+          name={name}
           type={inputType}
           placeholder={placeholder}
           value={value}
-          endAdornment={endAdornment}
+          endAdornment={touched && endAdornment}
           required={!!required}
           disabled={!!disabled}
           onChange={onChange}
@@ -179,9 +190,4 @@ const CustomInput = ({
   }
 };
 
-const areEqualProps = (prevProps: Props, nextProps: Props): boolean => {
-  return prevProps.value === nextProps.value &&
-    prevProps.disabled === nextProps.disabled;
-};
-
-export default React.memo(CustomInput, areEqualProps);
+export default CustomInput;
