@@ -1,8 +1,13 @@
+import { PageTitle } from '@/components/common-styled-components/PageTitle';
 import React from 'react';
 
 const HomePage = () => {
   return (
-    <div>Home Page</div>
+    <div>
+      <PageTitle variant="h4">
+        Home Page
+      </PageTitle>
+    </div>
   );
 };
 

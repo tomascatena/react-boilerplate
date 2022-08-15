@@ -5,12 +5,12 @@ import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import CustomThemeSwitch from '../custom-components/CustomThemeSwitch/CustomThemeSwitch';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
-import Switch from '@mui/material/Switch';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
@@ -19,7 +19,8 @@ const pages = [
   {
     label: 'Login',
     path: '/login',
-  }, {
+  },
+  {
     label: 'Register',
     path: '/register',
   }
@@ -151,10 +152,14 @@ const ResponsiveAppBar = ({ darkMode, toggleDarkMode }: Props) => {
             ))}
           </Box>
 
-          <Switch
+          <CustomThemeSwitch
             value={darkMode}
             onChange={(e) => toggleDarkMode(e.target.checked)}
             defaultChecked
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              mr: 2,
+            }}
           />
 
           <Box sx={{ flexGrow: 0 }}>
