@@ -2,13 +2,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from '@mui/system';
 import { ThemeProvider } from '@mui/material/styles';
 import { useDarkMode } from './hooks/useDarkMode';
-import AboutPage from './pages/AboutPage/AboutPage';
 import CssBaseline from '@mui/material/CssBaseline';
+import CustomBackdrop from './components/custom-components/CustomBackdrop/CustomBackdrop';
 import HomePage from './pages/HomePage/HomePage';
-import LoginPage from './pages/LoginPage/LoginPage';
 import React from 'react';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
 import ResponsiveAppBar from '@/components/AppBar/AppBar';
+
+// Lazy load Pages
+const LoginPageAsync = React.lazy(() => import('@/pages/LoginPage/LoginPage'));
+const RegisterPageAsync = React.lazy(() => import('@/pages/RegisterPage/RegisterPage'));
+const AboutPageAsync = React.lazy(() => import('@/pages/AboutPage/AboutPage'));
 
 const App = () => {
   const { theme, darkMode, toggleDarkMode } = useDarkMode();
@@ -24,27 +27,36 @@ const App = () => {
         />
 
         <Container maxWidth="xl">
-          <Routes>
-            <Route
-              path="/"
-              element={<HomePage />}
-            />
+          <React.Suspense
+            fallback={
+              <CustomBackdrop
+                isOpen
+                message='Loading...'
+              />
+            }
+          >
+            <Routes>
+              <Route
+                path="/"
+                element={<HomePage />}
+              />
 
-            <Route
-              path="/about"
-              element={<AboutPage />}
-            />
+              <Route
+                path="/about"
+                element={<AboutPageAsync />}
+              />
 
-            <Route
-              path="/login"
-              element={<LoginPage />}
-            />
+              <Route
+                path="/login"
+                element={<LoginPageAsync />}
+              />
 
-            <Route
-              path="/register"
-              element={<RegisterPage />}
-            />
-          </Routes>
+              <Route
+                path="/register"
+                element={<RegisterPageAsync />}
+              />
+            </Routes>
+          </React.Suspense>
         </Container>
       </ThemeProvider>
     </BrowserRouter >
