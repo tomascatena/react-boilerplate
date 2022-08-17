@@ -17,15 +17,17 @@ const devConfig: Configuration = {
     }
   },
   output: {
-    filename: 'bundle.js',
+    assetModuleFilename: 'assets/[contenthash][ext]',
+    chunkFilename: '[id].[contenthash].js',
+    clean: true,
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
-    assetModuleFilename: 'assets/[hash][ext]',
-    clean: true,
+    sourceMapFilename: '[name].[contenthash].map',
   },
   plugins: [
     new ReactRefreshWebpackPlugin(),
   ],
 };
 
-export default (env: WebpackEnvs) => { return merge(commonConfig(env), devConfig); };
+export default (env: WebpackEnvs) => merge(commonConfig(env), devConfig);
