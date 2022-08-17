@@ -1,6 +1,6 @@
 import { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
-import commonConfig from './webpack.common';
+import commonConfig, { WebpackEnvs } from './webpack.common';
 import path from 'path';
 
 const prodConfig: Configuration = {
@@ -11,7 +11,13 @@ const prodConfig: Configuration = {
     assetModuleFilename: 'assets/[hash][ext]',
     clean: true,
   },
-  devtool: 'source-map',
+  performance: {
+    hints: 'warning',
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
 };
 
-export default merge(commonConfig, prodConfig);
+export default (env :WebpackEnvs) => {
+  return merge(commonConfig(env), prodConfig);
+};

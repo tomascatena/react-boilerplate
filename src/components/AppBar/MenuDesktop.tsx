@@ -1,6 +1,5 @@
+import { Box, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import React from 'react';
 
 type Props = {

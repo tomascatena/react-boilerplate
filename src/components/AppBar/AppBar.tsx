@@ -1,13 +1,11 @@
-import AppBar from '@mui/material/AppBar';
+import { AppBar, Container, Toolbar } from '@mui/material';
 import AppLogoDesktop from './AppLogoDesktop';
 import AppLogoMobile from './AppLogoMobile';
-import Container from '@mui/material/Container';
 import CustomThemeSwitch from '../custom-components/CustomThemeSwitch/CustomThemeSwitch';
 import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
 import React from 'react';
 import SettingsMenu from './SettingsMenu';
-import Toolbar from '@mui/material/Toolbar';
 
 const pages = [
   {

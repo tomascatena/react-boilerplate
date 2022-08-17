@@ -8,7 +8,13 @@ export default {
   component: CustomButton,
 } as ComponentMeta<typeof CustomButton>;
 
-const Template: ComponentStory<typeof CustomButton> = (args) => <CustomButton {...args} />;
+const Template: ComponentStory<typeof CustomButton> = (args) => {
+  return (
+    <CustomButton {...args} >
+      Save
+    </CustomButton>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
@@ -16,7 +22,6 @@ Default.args = {
   isLoading: false,
   disabled: false,
   type: 'submit',
-  text: 'Save',
   loadingText: 'Saving...',
   startIcon: <SaveIcon />,
 };
@@ -27,7 +32,6 @@ Loading.args = {
   isLoading: true,
   disabled: false,
   type: 'submit',
-  text: 'Save',
   loadingText: 'Saving...',
   startIcon: <SaveIcon />,
 };

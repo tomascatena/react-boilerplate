@@ -2,7 +2,7 @@ import 'webpack-dev-server';
 import { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
-import commonConfig from './webpack.common';
+import commonConfig, { WebpackEnvs } from './webpack.common';
 import path from 'path';
 
 const devConfig: Configuration = {
@@ -28,4 +28,4 @@ const devConfig: Configuration = {
   ],
 };
 
-export default merge(commonConfig, devConfig);
+export default (env: WebpackEnvs) => { return merge(commonConfig(env), devConfig); };

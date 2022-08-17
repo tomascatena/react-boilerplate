@@ -2,24 +2,30 @@ import { Configuration } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
+export type WebpackEnvs = {
+  WEBPACK_BUNDLE: boolean;
+  WEBPACK_BUILD: boolean;
+}
+
 const commonConfig: Configuration = {
   entry: './src/index.tsx',
+  target: 'web',
   module: {
     rules: [
       {
         test: /\.(js|mjs|jsx|ts|tsx)$/,
-        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
+              '@babel/preset-env',
               '@babel/preset-react',
               '@babel/preset-typescript',
-              '@babel/preset-env'
             ],
             plugins: ['@babel/plugin-transform-runtime'],
           },
         },
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/i,
@@ -40,6 +46,16 @@ const commonConfig: Configuration = {
         type: 'asset/resource',
         exclude: /node_modules/,
       },
+      {
+        test: /\.html$/,
+        use: 'html-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.txt$/,
+        use: 'raw-loader',
+        exclude: /node_modules/,
+      }
     ],
   },
   plugins: [
@@ -55,4 +71,8 @@ const commonConfig: Configuration = {
   },
 };
 
-export default commonConfig;
+export default (env: WebpackEnvs) => {
+  console.log(env);
+
+  return commonConfig;
+};

@@ -1,11 +1,5 @@
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import { Avatar, Box, IconButton, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
 import React from 'react';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -27,10 +21,7 @@ const SettingsMenu = () => {
           onClick={handleOpenUserMenu}
           sx={{ p: 0 }}
         >
-          <Avatar
-            alt="Remy Sharp"
-            src="/static/images/avatar/2.jpg"
-          />
+          <Avatar alt="Remy Sharp" />
         </IconButton>
       </Tooltip>
 

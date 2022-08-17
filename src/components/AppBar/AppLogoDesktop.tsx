@@ -1,7 +1,7 @@
+import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import AdbIcon from '@mui/icons-material/Adb';
 import React from 'react';
-import Typography from '@mui/material/Typography';
 
 const AppLogo = () => {
   const navigate = useNavigate();
