@@ -1,7 +1,7 @@
 import { AppBar, Container, Toolbar } from '@mui/material';
 import AppLogoDesktop from './AppLogoDesktop';
 import AppLogoMobile from './AppLogoMobile';
-import CustomThemeSwitch from '../custom-components/CustomThemeSwitch/CustomThemeSwitch';
+import CustomThemeSwitch from '../common-components/CustomThemeSwitch/CustomThemeSwitch';
 import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
 import React from 'react';

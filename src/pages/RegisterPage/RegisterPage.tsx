@@ -2,8 +2,8 @@ import * as Yup from 'yup';
 import { PageTitle } from '@/components/common-styled-components/PageTitle';
 import { StyledForm } from '@/components/common-styled-components/StyledForm';
 import { useFormik } from 'formik';
-import CustomButton from '@/components/custom-components/CustomButton/CustomButton';
-import CustomInput from '@/components/custom-components/CustomInput/CustomInput';
+import CustomButton from '@/components/common-components/CustomButton/CustomButton';
+import CustomInput from '@/components/common-components/CustomInput/CustomInput';
 import React from 'react';
 
 interface FormValues {

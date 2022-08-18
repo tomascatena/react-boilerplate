@@ -3,7 +3,7 @@ import { Container } from '@mui/system';
 import { ThemeProvider } from '@mui/material/styles';
 import { useDarkMode } from './hooks/useDarkMode';
 import CssBaseline from '@mui/material/CssBaseline';
-import CustomBackdrop from './components/custom-components/CustomBackdrop/CustomBackdrop';
+import CustomBackdrop from './components/common-components/CustomBackdrop/CustomBackdrop';
 import React from 'react';
 import ResponsiveAppBar from '@/components/AppBar/AppBar';
 
@@ -27,6 +27,8 @@ const App = () => {
         />
 
         <Container maxWidth="xl">
+          <h1>React Typescript Boilerplate</h1>
+
           <React.Suspense
             fallback={
               <CustomBackdrop
