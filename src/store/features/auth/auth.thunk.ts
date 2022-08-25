@@ -8,7 +8,6 @@ import {
 import { RootState } from '@/store/store';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios, { AxiosError } from 'axios';
-import axiosInstance from '@/axios/axiosConfig';
 
 type RejectValue = {
   message?: string;
@@ -30,7 +29,7 @@ IUserLoginForm,
     }
 
     try {
-      const { data } = await axiosInstance.post(API_ENDPOINTS.LOGIN, registerForm);
+      const { data } = await axios.post(API_ENDPOINTS.LOGIN, registerForm);
 
       return data;
     } catch (error) {
@@ -55,7 +54,7 @@ IUserRegisterForm,
     }
 
     try {
-      const { data } = await axiosInstance.post(API_ENDPOINTS.REGISTER, registerForm);
+      const { data } = await axios.post(API_ENDPOINTS.REGISTER, registerForm);
 
       return data;
     } catch (error) {
@@ -72,7 +71,7 @@ void,
 { rejectValue: RejectValue }
 >('auth/getUser', async (_, { rejectWithValue }) => {
   try {
-    const { data } = await axiosInstance.get(API_ENDPOINTS.LOGGED_IN_USER);
+    const { data } = await axios.get(API_ENDPOINTS.LOGGED_IN_USER);
 
     return data;
   } catch (error) {

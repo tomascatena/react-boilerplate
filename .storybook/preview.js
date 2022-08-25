@@ -49,21 +49,19 @@ const withMUIThemeProvider = (Story, context) => {
   const theme = context.globals.theme === 'light' ? lightTheme : darkTheme;
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
 
-        <Box
-          sx={{
-            backgroundColor: theme.palette.background.default,
-            padding: 3,
-            minHeight: '100vh',
-          }}
-        >
-          <Story {...context} />
-        </Box>
-      </ThemeProvider>
-    </>
+      <Box
+        sx={{
+          backgroundColor: theme.palette.background.default,
+          padding: 3,
+          minHeight: '100vh',
+        }}
+      >
+        <Story {...context} />
+      </Box>
+    </ThemeProvider>
   );
 };
 
