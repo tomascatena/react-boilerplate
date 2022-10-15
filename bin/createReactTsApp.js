@@ -3,6 +3,7 @@
 const util = require('util');
 const path = require('path');
 const fs = require('fs');
+const { execSync } = require('child_process');
 
 // Utility functions
 const exec = util.promisify(require('child_process').exec);
@@ -14,6 +15,16 @@ const runCmd = async (command) => {
     console.log(stderr);
   } catch (error) {
     console.log(error);
+  }
+};
+
+const hasYarn = async () => {
+  try {
+    await execSync('yarnpkg --version', { stdio: 'ignore' });
+
+    return true;
+  } catch {
+    return false;
   }
 };
 
@@ -56,9 +67,13 @@ const setup = async () => {
     process.chdir(appPath);
 
     // Install dependencies
+    const useYarn = await hasYarn();
     console.log('Installing dependencies...');
-    await runCmd('npm install');
-
+    if (useYarn) {
+      await runCmd('yarn install');
+    } else {
+      await runCmd('npm install');
+    }
     console.log('Dependencies installed successfully.');
     console.log();
 
@@ -73,14 +88,13 @@ const setup = async () => {
     fs.unlinkSync(path.join(appPath, 'CHANGELOG.md'));
     fs.unlinkSync(path.join(appPath, 'bin', 'createReactTsApp.js'));
     fs.rmdirSync(path.join(appPath, 'bin'));
-    fs.unlinkSync(path.join(appPath, 'yarn.lock'));
 
     console.log('Installation is now complete!');
     console.log();
 
     console.log('We suggest that you start by typing:');
     console.log(`    cd ${folderName}`);
-    console.log('    npm run dev');
+    console.log(useYarn ? '    yarn dev' : '    npm run dev');
     console.log();
     console.log('Enjoy your production-ready React Typescript app, which already supports a large number of ready-made features!');
     console.log('Check README.md for more info.');
