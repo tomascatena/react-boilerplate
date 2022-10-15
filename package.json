@@ -3,9 +3,13 @@
   "author": "Tomás Catena",
   "license": "MIT",
   "version": "0.0.1",
+  "publishConfig": {
+    "public": true
+  },
   "description": "React/Typescript Boilerplate",
   "main": "src/index.tsx",
   "scripts": {
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
     "start": "webpack serve --config config/webpack.dev.ts",
     "dev": "webpack serve --config config/webpack.dev.ts",
     "build": "webpack --config config/webpack.prod.ts",

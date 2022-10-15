@@ -24,7 +24,6 @@ const LoginPage = () => {
     password: Yup.string()
       .required('Required')
       .min(6, 'Must be 6 characters or more'),
-
   });
 
   const formik = useFormik({

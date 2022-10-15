@@ -30,8 +30,6 @@ const App = () => {
         />
 
         <Container maxWidth="xl">
-          <h1>React Typescript Boilerplate</h1>
-
           <React.Suspense
             fallback={
               <CustomBackdrop
