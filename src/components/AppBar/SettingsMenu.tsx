@@ -1,10 +1,18 @@
 import { Avatar, Box, IconButton, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import React from 'react';
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = [
+  { label: 'Profile', path: '/profile' },
+  { label: 'Account', path: '/account' },
+  { label: 'Dashboard', path: '/dashboard' },
+  { label: 'Logout', path: '/logout' },
+];
 
 const SettingsMenu = () => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+
+  const navigate = useNavigate();
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
@@ -12,6 +20,11 @@ const SettingsMenu = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const navigateAndCloseMenu = (path: string) => {
+    navigate(path);
+    handleCloseUserMenu();
   };
 
   return (
@@ -41,12 +54,12 @@ const SettingsMenu = () => {
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
       >
-        {settings.map((setting) => (
+        {settings.map(({ label, path }) => (
           <MenuItem
-            key={setting}
-            onClick={handleCloseUserMenu}
+            key={label}
+            onClick={() => navigateAndCloseMenu(path)}
           >
-            <Typography textAlign="center">{setting}</Typography>
+            <Typography textAlign="center">{label}</Typography>
           </MenuItem>
         ))}
       </Menu>

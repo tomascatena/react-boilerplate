@@ -71,7 +71,10 @@ const lightTheme = createTheme({
       disabled: 'rgba(0, 0, 0, 0.38)',
     },
     divider: 'rgba(0, 0, 0, 0.12)',
-    background: { paper: '#fff', default: '#fff' },
+    background: {
+      paper: '#fff',
+      default: '#fff'
+    },
     action: {
       active: 'rgba(0, 0, 0, 0.54)',
       hover: 'rgba(0, 0, 0, 0.04)',
