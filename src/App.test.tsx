@@ -1,13 +1,14 @@
-import { act, render } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import App from './App';
 import React from 'react';
 
 describe('App tests', () => {
-  it('should contains the heading 1', () => {
+  it('should contain the app logo', async () => {
     render(<App />);
 
-    act(() => {
-      expect(true).toBe(true);
+    await act(() => {
+      const logoText = screen.getByText(/app logo/i);
+      expect(logoText).toBeInTheDocument();
     });
   });
 });
