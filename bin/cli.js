@@ -13,7 +13,7 @@ const runCommand = command => {
   return true;
 };
 
-const repoName = process.argv[2];
+const repoName = process.argv[2] || 'react-ts-app';
 
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/tomascatena/react-boilerplate ${repoName}`;
 

@@ -2,12 +2,12 @@
   "name": "@pelusa/create-react-ts-boilerplate",
   "author": "Tomás Catena",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publishConfig": {
     "public": true
   },
   "bin": "bin/cli.js",
-  "description": "React/Typescript Boilerplate",
+  "description": "React/Typescript Starter Project",
   "main": "src/index.tsx",
   "scripts": {
     "prepublishOnly": "npm run lint && npm run test && npm run build",
