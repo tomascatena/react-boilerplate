@@ -1,11 +1,12 @@
 {
-  "name": "react-boilerplate",
+  "name": "@pelusa/create-react-ts-boilerplate",
   "author": "Tomás Catena",
   "license": "MIT",
   "version": "0.0.1",
   "publishConfig": {
     "public": true
   },
+  "bin": "bin/cli.js",
   "description": "React/Typescript Boilerplate",
   "main": "src/index.tsx",
   "scripts": {
@@ -23,7 +24,8 @@
     "test:coverage": "jest --coverage",
     "husky-install": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "postinstall": "npx husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
