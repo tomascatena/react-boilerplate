@@ -123,7 +123,6 @@ const commonConfig = (env: WebpackEnvs): Configuration => {
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
-          exclude: /node_modules/,
         },
         {
           test: /\.(scss|sass)$/,
@@ -132,7 +131,6 @@ const commonConfig = (env: WebpackEnvs): Configuration => {
             { loader: 'css-loader', options: { modules: true } },
             { loader: 'sass-loader' },
           ],
-          exclude: /node_modules/,
         },
         {
           test: /\.(ttf|woff|woff2)$/,

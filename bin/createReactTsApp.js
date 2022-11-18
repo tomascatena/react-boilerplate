@@ -18,9 +18,9 @@ const runCmd = async (command) => {
   }
 };
 
-const hasYarn = async () => {
+const hasYarn = () => {
   try {
-    await execSync('yarnpkg --version', { stdio: 'ignore' });
+    execSync('yarnpkg --version', { stdio: 'ignore' });
 
     return true;
   } catch {

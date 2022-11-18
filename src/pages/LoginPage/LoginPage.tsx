@@ -71,7 +71,6 @@ const LoginPage = () => {
         <CustomButton type='submit'>
           Login
         </CustomButton>
-
       </StyledForm>
     </div>
   );

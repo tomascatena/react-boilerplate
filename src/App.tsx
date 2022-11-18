@@ -1,3 +1,4 @@
+import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from '@mui/system';
 import { ThemeProvider } from '@mui/material/styles';
