@@ -5,15 +5,15 @@ import commonConfig, { WebpackEnvs } from './webpack.common';
 import path from 'path';
 
 const prodConfig: Configuration = {
-  mode: 'production',
+  mode: `production`,
   devtool: false,
   output: {
-    assetModuleFilename: 'assets/[contenthash][ext]',
-    chunkFilename: '[id].[contenthash].js',
+    assetModuleFilename: `assets/[contenthash][ext]`,
+    chunkFilename: `[id].[contenthash].js`,
     clean: true,
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, '../dist'),
-    sourceMapFilename: '[name].[contenthash].map',
+    filename: `[name].[contenthash].js`,
+    path: path.resolve(__dirname, `../dist`),
+    sourceMapFilename: `[name].[contenthash].map`,
   },
   optimization: {
     minimize: true,
@@ -43,7 +43,7 @@ const prodConfig: Configuration = {
     ]
   },
   performance: {
-    hints: 'warning',
+    hints: `warning`,
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },

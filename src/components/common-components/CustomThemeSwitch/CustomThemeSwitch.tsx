@@ -42,14 +42,14 @@ type Props = {
 };
 
 const CustomThemeSwitch = ({
-  darkThemeSwitchThumbColor = '#003892',
-  darkThemeTrackBackgroundColor = '#8796A5',
+  darkThemeSwitchThumbColor = `#003892`,
+  darkThemeTrackBackgroundColor = `#8796A5`,
   defaultChecked = false,
-  lightThemeSwitchThumbColor = '#001e3c',
-  lightThemeTrackBackgroundColor = '#aab4be',
+  lightThemeSwitchThumbColor = `#001e3c`,
+  lightThemeTrackBackgroundColor = `#aab4be`,
   onChange,
   sx = {},
-  textColor = '#fff',
+  textColor = `#fff`,
   value,
 }: Props) => {
   return (

@@ -23,7 +23,7 @@ type Props = {
   /**
    * The variant of the text message. The default is 'h4'
    */
-  textVariant?: 'button' | 'caption' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'inherit' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'overline' | undefined;
+  textVariant?: `button` | `caption` | `h1` | `h2` | `h3` | `h4` | `h5` | `h6` | `inherit` | `subtitle1` | `subtitle2` | `body1` | `body2` | `overline` | undefined;
 };
 
 /**
@@ -31,10 +31,10 @@ type Props = {
  */
 const CustomBackdrop = ({
   isOpen,
-  message = 'Loading... Please wait.',
+  message = `Loading... Please wait.`,
   loaderSize = 100,
   loaderThickness = 4,
-  textVariant = 'h4'
+  textVariant = `h4`
 }: Props) => {
   return (
     <StyledBackdrop open={isOpen}>
@@ -44,7 +44,7 @@ const CustomBackdrop = ({
       />
 
       <Typography
-        sx={{ textAlign: 'center' }}
+        sx={{ textAlign: `center` }}
         variant={textVariant}
         color='text.primary'
       >

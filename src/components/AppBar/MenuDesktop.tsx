@@ -12,12 +12,12 @@ const MenuDesktop = ({
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+    <Box sx={{ flexGrow: 1, display: { xs: `none`, md: `flex` } }}>
       {pages.map((page) => (
         <Button
           key={page.path}
           onClick={() => navigate(page.path)}
-          sx={{ my: 2, color: 'white', display: 'block' }}
+          sx={{ my: 2, color: `white`, display: `block` }}
         >
           {page.label}
         </Button>

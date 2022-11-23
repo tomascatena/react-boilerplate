@@ -9,12 +9,12 @@ import SettingsMenu from './SettingsMenu';
 
 const pages = [
   {
-    label: 'Login',
-    path: '/login',
+    label: `Login`,
+    path: `/login`,
   },
   {
-    label: 'Register',
-    path: '/register',
+    label: `Register`,
+    path: `/register`,
   }
 ];
 
@@ -41,7 +41,7 @@ const ResponsiveAppBar = ({ darkMode, toggleDarkMode }: Props) => {
             onChange={(e) => toggleDarkMode(e.target.checked)}
             defaultChecked
             sx={{
-              display: { xs: 'none', md: 'flex' },
+              display: { xs: `none`, md: `flex` },
               mr: 2,
             }}
           />

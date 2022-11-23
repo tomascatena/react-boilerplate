@@ -7,11 +7,11 @@ type Props = {
   /**
    * The variant to use for the button. Defaults to 'contained'
    */
-  variant?: 'text' | 'contained' | 'outlined' | undefined;
+  variant?: `text` | `contained` | `outlined` | undefined;
   /**
    * The type of button. Defaults to 'submit'
    */
-  type?: 'button' | 'submit' | 'reset' | undefined;
+  type?: `button` | `submit` | `reset` | undefined;
   /**
    * Weather the button is loading. Defaults to false
    */
@@ -56,9 +56,9 @@ type Props = {
 const CustomButton = ({
   isLoading = false,
   disabled = false,
-  variant = 'contained',
-  type = 'button',
-  loadingText = 'Loading...',
+  variant = `contained`,
+  type = `button`,
+  loadingText = `Loading...`,
   fullWidth = false,
   sx,
   startIcon,
@@ -84,8 +84,8 @@ const CustomButton = ({
       startIcon={!isLoading && startIcon}
       disabled={disabled || isLoading}
       fullWidth={fullWidth}
-      {...(type === 'submit' ? onSubmit : undefined)}
-      {...(type === 'reset' ? onReset : undefined)}
+      {...(type === `submit` ? onSubmit : undefined)}
+      {...(type === `reset` ? onReset : undefined)}
     >
       {isLoading ? loadingState : <>{children}</>}
     </Button>

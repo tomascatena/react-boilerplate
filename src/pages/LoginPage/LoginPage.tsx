@@ -13,17 +13,17 @@ interface FormValues {
 
 const LoginPage = () => {
   const initialValues: FormValues = {
-    email: '',
-    password: '',
+    email: ``,
+    password: ``,
   };
 
   const validationSchema = Yup.object().shape({
     email: Yup.string()
-      .required('Required')
-      .email('Invalid email address'),
+      .required(`Required`)
+      .email(`Invalid email address`),
     password: Yup.string()
-      .required('Required')
-      .min(6, 'Must be 6 characters or more'),
+      .required(`Required`)
+      .min(6, `Must be 6 characters or more`),
   });
 
   const formik = useFormik({

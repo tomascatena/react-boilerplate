@@ -6,7 +6,7 @@ const plugins = [
   new webpack.ProgressPlugin(),
   new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
-    template: './public/index.html',
+    template: `./public/index.html`,
     minify: {
       removeComments: true,
       collapseWhitespace: true,

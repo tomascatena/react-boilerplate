@@ -18,19 +18,19 @@ const commonConfig = (env: WebpackEnvs): Configuration => {
   }
 
   return {
-    entry: './src/index.tsx',
-    target: 'web',
+    entry: `./src/index.tsx`,
+    target: `web`,
     module: {
       rules
     },
     plugins,
     resolve: {
       extensions: [
-        '.js',
-        '.jsx',
-        '.ts',
-        '.tsx',
-        '.json'
+        `.js`,
+        `.jsx`,
+        `.ts`,
+        `.tsx`,
+        `.json`
       ],
       plugins: [
         new TsconfigPathsPlugin({}),
@@ -38,7 +38,7 @@ const commonConfig = (env: WebpackEnvs): Configuration => {
     },
     optimization: {
       splitChunks: {
-        chunks: 'all',
+        chunks: `all`,
       }
     },
   };

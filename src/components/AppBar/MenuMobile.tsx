@@ -21,7 +21,7 @@ const MenuMobile = ({ pages }: Props) => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+    <Box sx={{ flexGrow: 1, display: { xs: `flex`, md: `none` } }}>
       <IconButton
         size="large"
         aria-label="account of current user"
@@ -37,18 +37,18 @@ const MenuMobile = ({ pages }: Props) => {
         id="menu-appbar"
         anchorEl={anchorElNav}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
+          vertical: `bottom`,
+          horizontal: `left`,
         }}
         keepMounted
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: `top`,
+          horizontal: `left`,
         }}
         open={Boolean(anchorElNav)}
         onClose={handleCloseNavMenu}
         sx={{
-          display: { xs: 'block', md: 'none' },
+          display: { xs: `block`, md: `none` },
         }}
       >
         {pages.map((page) => (

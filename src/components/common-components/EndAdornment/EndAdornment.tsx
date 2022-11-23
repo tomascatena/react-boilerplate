@@ -11,7 +11,7 @@ interface Props {
   shouldShowCheckIcon?: boolean;
   showPassword?: boolean;
   hasError: boolean;
-  type: 'text' | 'password' | 'email';
+  type: `text` | `password` | `email`;
   setShowPassword?: (showPassword: boolean) => void;
 }
 
@@ -27,7 +27,7 @@ const EndAdornment = ({
       {shouldShowCheckIcon && !hasError && <CheckIcon color="success" />}
 
       {
-        setShowPassword && type === 'password' && (
+        setShowPassword && type === `password` && (
           <IconButton
             aria-label="toggle password visibility"
             onClick={() => setShowPassword(!showPassword)}

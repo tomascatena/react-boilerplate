@@ -3,7 +3,7 @@ import CustomThemeSwitch from './CustomThemeSwitch';
 import React from 'react';
 
 export default {
-  title: 'UI/CustomThemeSwitch',
+  title: `UI/CustomThemeSwitch`,
   component: CustomThemeSwitch,
 } as ComponentMeta<typeof CustomThemeSwitch>;
 
@@ -22,9 +22,9 @@ const Template: ComponentStory<typeof CustomThemeSwitch> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  darkThemeSwitchThumbColor: '#003892',
-  darkThemeTrackBackgroundColor: '#8796A5',
-  lightThemeSwitchThumbColor: '#001e3c',
-  lightThemeTrackBackgroundColor: '#aab4be',
-  textColor: '#fff',
+  darkThemeSwitchThumbColor: `#003892`,
+  darkThemeTrackBackgroundColor: `#8796A5`,
+  lightThemeSwitchThumbColor: `#001e3c`,
+  lightThemeTrackBackgroundColor: `#aab4be`,
+  textColor: `#fff`,
 };

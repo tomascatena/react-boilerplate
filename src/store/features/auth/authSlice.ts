@@ -1,4 +1,4 @@
-import { IUser, ValidationError } from '@/typings/typings';
+import { IUser, ValidationError } from '@/@types/typings';
 import { PayloadAction, SerializedError, createSlice } from '@reduxjs/toolkit';
 import { getUser, login, register } from './auth.thunk';
 
@@ -23,7 +23,7 @@ export const initialState: AuthState = {
 };
 
 export const authSlice = createSlice({
-  name: 'user',
+  name: `user`,
   initialState,
   reducers: {
     hydrateAccessToken(state, action: PayloadAction<string | null>) {

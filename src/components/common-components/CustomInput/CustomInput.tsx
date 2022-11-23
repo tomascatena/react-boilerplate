@@ -27,11 +27,11 @@ type Props = {
   /**
    * The type of the input (text, password or email)
    */
-  type: 'text' | 'password' | 'email';
+  type: `text` | `password` | `email`;
   /**
    * The variant of the input (standard, outlined or filled)
    */
-  variant?: 'standard' | 'outlined' | 'filled';
+  variant?: `standard` | `outlined` | `filled`;
   /**
    * The value of the input
    */
@@ -115,7 +115,7 @@ const CustomInput = ({
     />
   );
 
-  if (variant === 'standard') {
+  if (variant === `standard`) {
     return (
       <FormControl
         variant="standard"
@@ -139,7 +139,7 @@ const CustomInput = ({
         <FormHelperText>{hasError ? error : helpText}</FormHelperText>
       </FormControl>
     );
-  } else if (variant === 'outlined') {
+  } else if (variant === `outlined`) {
     return (
       <FormControl
         sx={sx}

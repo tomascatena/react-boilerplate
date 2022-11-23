@@ -4,7 +4,7 @@ import React from 'react';
 import SaveIcon from '@mui/icons-material/Save';
 
 export default {
-  title: 'UI/CustomButton',
+  title: `UI/CustomButton`,
   component: CustomButton,
 } as ComponentMeta<typeof CustomButton>;
 
@@ -18,20 +18,20 @@ const Template: ComponentStory<typeof CustomButton> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  variant: 'contained',
+  variant: `contained`,
   isLoading: false,
   disabled: false,
-  type: 'submit',
-  loadingText: 'Saving...',
+  type: `submit`,
+  loadingText: `Saving...`,
   startIcon: <SaveIcon />,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
-  variant: 'contained',
+  variant: `contained`,
   isLoading: true,
   disabled: false,
-  type: 'submit',
-  loadingText: 'Saving...',
+  type: `submit`,
+  loadingText: `Saving...`,
   startIcon: <SaveIcon />,
 };

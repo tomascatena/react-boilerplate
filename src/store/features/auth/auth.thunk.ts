@@ -4,7 +4,7 @@ import {
   IUserLoginForm,
   IUserRegisterForm,
   ValidationError,
-} from '@/typings/typings';
+} from '@/@types/typings';
 import { RootState } from '@/store/store';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios, { AxiosError } from 'axios';
@@ -20,7 +20,7 @@ AuthData,
 IUserLoginForm,
 { state: RootState; rejectValue: RejectValue }
 >(
-  'auth/login',
+  `auth/login`,
   async (registerForm, { getState, requestId, rejectWithValue }) => {
     const { loading, currentRequestId } = getState().auth;
 
@@ -45,7 +45,7 @@ AuthData,
 IUserRegisterForm,
 { state: RootState; rejectValue: RejectValue }
 >(
-  'auth/register',
+  `auth/register`,
   async (registerForm, { getState, requestId, rejectWithValue }) => {
     const { loading, currentRequestId } = getState().auth;
 
@@ -69,7 +69,7 @@ export const getUser = createAsyncThunk<
 AuthData,
 void,
 { rejectValue: RejectValue }
->('auth/getUser', async (_, { rejectWithValue }) => {
+>(`auth/getUser`, async (_, { rejectWithValue }) => {
   try {
     const { data } = await axios.get(API_ENDPOINTS.LOGGED_IN_USER);
 

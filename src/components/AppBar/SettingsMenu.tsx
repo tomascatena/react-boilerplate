@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import React from 'react';
 
 const settings = [
-  { label: 'Profile', path: '/profile' },
-  { label: 'Account', path: '/account' },
-  { label: 'Dashboard', path: '/dashboard' },
-  { label: 'Logout', path: '/logout' },
+  { label: `Profile`, path: `/profile` },
+  { label: `Account`, path: `/account` },
+  { label: `Dashboard`, path: `/dashboard` },
+  { label: `Logout`, path: `/logout` },
 ];
 
 const SettingsMenu = () => {
@@ -39,17 +39,17 @@ const SettingsMenu = () => {
       </Tooltip>
 
       <Menu
-        sx={{ mt: '45px' }}
+        sx={{ mt: `45px` }}
         id="menu-appbar"
         anchorEl={anchorElUser}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: `top`,
+          horizontal: `right`,
         }}
         keepMounted
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: `top`,
+          horizontal: `right`,
         }}
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}

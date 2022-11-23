@@ -5,19 +5,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import axios from 'axios';
 
-axios.defaults.headers.common['Content-Type'] = 'application/json';
+axios.defaults.headers.common[`Content-Type`] = `application/json`;
 
 axios.interceptors.request.use((config) => {
   if (!config?.headers) {
-    throw new Error("Expected 'config' and 'config.headers' not to be undefined");
+    throw new Error(`Expected 'config' and 'config.headers' not to be undefined`);
   }
 
-  const token = localStorage.getItem('accessToken');
+  const token = localStorage.getItem(`accessToken`);
 
   if (token) {
     config.headers.Authorization = `Bearer ${JSON.parse(token)}`;
   } else {
-    config.headers.Authorization = '';
+    config.headers.Authorization = ``;
   }
 
   return config;
@@ -26,7 +26,7 @@ axios.interceptors.request.use((config) => {
 });
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById(`root`) as HTMLElement
 );
 
 root.render(

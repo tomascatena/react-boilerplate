@@ -32,12 +32,12 @@ const CircularLoader = ({
   sx
 }: Props) => {
   return (
-    <Box sx={{ position: 'relative', ...sx }}>
+    <Box sx={{ position: `relative`, ...sx }}>
       <CircularProgress
         variant='determinate'
         sx={{
           color: (theme) =>
-            theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
+            theme.palette.grey[theme.palette.mode === `light` ? 200 : 800],
         }}
         size={size}
         thickness={thickness}
@@ -49,11 +49,11 @@ const CircularLoader = ({
         disableShrink
         sx={{
           animationDuration: `${duration}ms`,
-          position: 'absolute',
+          position: `absolute`,
           left: 0,
 
           [`& .${circularProgressClasses.circle}`]: {
-            strokeLinecap: 'round',
+            strokeLinecap: `round`,
           },
         }}
         size={size}

@@ -15,26 +15,26 @@ interface FormValues {
 
 const RegisterPage = () => {
   const initialValues: FormValues = {
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    username: ``,
+    email: ``,
+    password: ``,
+    confirmPassword: ``,
   };
 
   const validationSchema = Yup.object().shape({
     username: Yup.string()
-      .required('Required')
-      .min(2, 'Must be at least 2 characters')
-      .max(15, 'Must be 15 characters or less'),
+      .required(`Required`)
+      .min(2, `Must be at least 2 characters`)
+      .max(15, `Must be 15 characters or less`),
     email: Yup.string()
-      .required('Required')
-      .email('Invalid email address'),
+      .required(`Required`)
+      .email(`Invalid email address`),
     password: Yup.string()
-      .required('Required')
-      .min(6, 'Must be 6 characters or more'),
+      .required(`Required`)
+      .min(6, `Must be 6 characters or more`),
     confirmPassword: Yup.string()
-      .required('Required')
-      .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+      .required(`Required`)
+      .oneOf([Yup.ref(`password`), null], `Passwords must match`),
   });
 
   const formik = useFormik({

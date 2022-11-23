@@ -31,7 +31,7 @@ const CustomCheckbox = ({
 }: Props) => {
   return (
     <FormControlLabel
-      sx={{ width: 'fit-content' }}
+      sx={{ width: `fit-content` }}
       label={
         <Typography color='text.primary'>
           {label}

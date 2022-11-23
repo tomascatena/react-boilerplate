@@ -1,10 +1,10 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-type Severity = 'success' | 'info' | 'warning' | 'error';
-type Variant = 'filled' | 'outlined' | 'text';
+type Severity = `success` | `info` | `warning` | `error`;
+type Variant = `filled` | `outlined` | `text`;
 type AnchorOrigin = {
-  vertical: 'top' | 'center' | 'bottom';
-  horizontal: 'left' | 'center' | 'right';
+  vertical: `top` | `center` | `bottom`;
+  horizontal: `left` | `center` | `right`;
 }
 
 export interface AlertState {
@@ -18,14 +18,14 @@ export interface AlertState {
 
 export const initialState: AlertState = {
   isOpen: false,
-  message: 'Something went wrong',
-  variant: 'filled',
-  severity: 'success',
+  message: `Something went wrong`,
+  variant: `filled`,
+  severity: `success`,
   autoHideDuration: 5000
 };
 
 export const alertSlice = createSlice({
-  name: 'alert',
+  name: `alert`,
   initialState,
   reducers: {
     setAlert(

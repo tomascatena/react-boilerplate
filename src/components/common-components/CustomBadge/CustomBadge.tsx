@@ -9,11 +9,11 @@ type Props = {
   /**
    * The color of the badge (primary, secondary, success, error, warning, info)
    */
-  badgeColor?: 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success';
+  badgeColor?: `primary` | `secondary` | `error` | `warning` | `info` | `success`;
   /**
    * The color of the text (black ,white)
    */
-  textColor?: 'white' | 'black';
+  textColor?: `white` | `black`;
 };
 
 /**
