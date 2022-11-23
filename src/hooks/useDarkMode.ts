@@ -5,7 +5,7 @@ import lightTheme from '@/themes/lightTheme';
 
 export const useDarkMode = () => {
   // Get OS-level preference for dark mode
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const prefersDarkMode = useMediaQuery(`(prefers-color-scheme: dark)`);
 
   // state: boolean ; true == use dark mode
   const [darkMode, setDarkMode] = React.useState(true);
