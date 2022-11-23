@@ -2,7 +2,7 @@ const rules = [
   {
     oneOf: [
       {
-        test: [/\.avif$/],
+        test: /\.avif$/,
         type: `asset`,
         mimetype: `image/avif`,
         parser: {
@@ -10,6 +10,10 @@ const rules = [
             maxSize: `10000`,
           },
         },
+      },
+      {
+        test: /\.mp3$/,
+        type: `asset/resource`,
       },
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
